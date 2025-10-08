@@ -50,10 +50,10 @@ def belgian_flag(width): #fonction tracant le drapeau belge
 
 def three_color_flag(width, color1, color2, color3, is_horiz): #fonction tracant un drapeau horizontal ou vertical
     if is_horiz: #drapeau horizontal
-        height = (width//3)*3/5
+        height = (width/3)*3/5
     else: #drapeau vertical
-        width = width//3
-        height = width*3/2
+        height = width*3/5
+        width = width/3
     rectangle(width, height, color1)
     rectangle(width, height, color2)
     rectangle(width, height, color3)
@@ -86,17 +86,17 @@ def european_flag(width): #fonction tracant le drapeau européen
 def all_flags(): #fonction tracant tous les drapeaux
     european_flag(400)
     tortue.goto(-300,150)
-    three_color_flag(200, "black", "yellow", "red", False)
+    three_color_flag(200, "#008C45", "#F4F5F0", "#CD212A", False)
     tortue.goto(-50, 150)
-    three_color_flag(200, "red", "white", "blue", True)
+    three_color_flag(200, "#AE1C28", "white", "#21468B", True)
     tortue.goto(200, 150)
-    three_color_flag(200, "black", "red", "yellow", True)
+    three_color_flag(200, "#000000", "#DD0000", "#FFCE00", True)
     tortue.goto(450, 150)
-    three_color_flag(200, "blue", "white", "red", False)
+    three_color_flag(200, "#0055A4", "white", "#EF4135", False)
     tortue.goto(-300, -300)
     tortue.right(45)
     for i in range(5): #on trace 5 drapeaux belges en arc de cercle
-        belgian_flag(200)
+        three_color_flag(200, "black", "#FFD700", "#FF0000", False)
         tortue.left(25)
         tortue.forward(50)
     time.sleep(3) #on attend 3 secondes pour pouvoir admirer le travail
